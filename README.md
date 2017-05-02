@@ -86,5 +86,10 @@ BSD
 Author Information
 ------------------
 
+Larry Smith Jr.
+- @mrlesmithjr
+- http://everythingshouldbevirtual.com
+- mrlesmithjr [at] gmail.com
+
 [Ansible]: <https://www.ansible.com>
 [Prometheus]: <https://prometheus.io/>
