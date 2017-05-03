@@ -71,11 +71,43 @@ Example Playbook
 ----------------
 
 ```
-- hosts: prometheus_server
+- hosts: monitoring_server
   vars:
+    pri_domain_name: 'test.vagrant.local'
+    prometheus_config:
+      global:
+        scrape_interval: 1m
+        scrape_timeout: 10s 
+        evaluation_interval: 1m
+      rule_files:
+      scrape_configs:
+        - job_name: 'node'
+          static_configs:
+            - targets:
+                - '127.0.0.1:9100'
+              labels:
+                host: 'node0'
+            - targets:
+                - '192.168.250.11:9100'
+              labels:
+                host: 'node1'
+            - targets:
+                - '192.168.250.12:9100'
+              labels:
+                host: 'node2'
+        - job_name: 'containers'
+          static_configs:
+            - targets:
+                - '192.168.250.11:8080'
+              labels:
+                docker_host: 'node1'
+            - targets:
+                - '192.168.250.12:8080'
+              labels:
+                docker_host: 'node2'
   roles:
     - role: ansible-prometheus
-  tasks:
+    - role: ansible-grafana
 ```
 
 License
