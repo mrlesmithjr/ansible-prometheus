@@ -18,5 +18,5 @@
   file:
     src: "{{ prometheus_install_dir }}/prometheus-{{ prometheus_version }}.linux-amd64"
     dest: "{{ prometheus_install_dir }}/prometheus"
-    state: "link"
+    state: link
   become: true
