@@ -1,26 +1,36 @@
+---
 galaxy_info:
   author: Larry Smith Jr.
-  description: An [Ansible] role to install/configure [Prometheus]
-  license: license (MIT)
+  description: An Ansible role to install/configure Prometheus
+  license: MIT
 
   min_ansible_version: 1.2
 
   platforms:
-  - name: Ubuntu
-    versions:
-    - trusty
-    - utopic
-    - vivid
-    - wily
-    - xenial
-    - yakkety
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-  - name: EL
-    versions:
-    - 7
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+    - name: EL
+      versions:
+        - 7
+    - name: Fedora
+      versions:
+        - 24
+        - 25
+        - 26
+        - 27
+        - 28
+        - 29
+    - name: Ubuntu
+      versions:
+        - bionic
+        - trusty
+        - utopic
+        - vivid
+        - wily
+        - xenial
+        - yakkety
 
   galaxy_tags:
     - monitoring
