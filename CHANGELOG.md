@@ -1,3 +1,30 @@
+commit e7ecb18d437c052e794f25bd1f4470711f94ec0a
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Wed Jun 10 11:14:24 2020 -0400
+
+    Fixed linting issue
+
+commit 938bf7557a72299c8c59b971e2bb3c4bacfe0937
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Wed Jun 10 11:13:50 2020 -0400
+
+    Updated to latest version
+
+commit b4be5c28c6ebb61e437fae4246948dc7c43067f7
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Wed Jun 10 11:13:26 2020 -0400
+
+    Fixed issue with argument syntax
+
+commit 89852225bb4a9959fa82fc08f15f2b483b44799b
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Wed Jun 10 10:52:06 2020 -0400
+
+    Added new files from Cookiecutter template
+    
+    New files for testing, etc. based on Cookiecutter template for Ansible
+    roles.
+
 commit 9c697de3316bd1f4ec659a7411ed7697c87a83cb
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Wed Jun 10 10:49:13 2020 -0400
