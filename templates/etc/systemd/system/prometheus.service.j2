@@ -8,8 +8,10 @@ After=network-online.target
 User={{ prometheus_user_info['user'] }}
 Restart=on-failure
 ExecStart={{ prometheus_install_dir }}/prometheus/prometheus \
-                                -config.file={{ prometheus_config_file }} \
-                                -storage.local.path={{ prometheus_local_storage }}
+                                --config.file={{ prometheus_config_file }} \
+                                --storage.tsdb.path={{ prometheus_local_storage }} \
+                                --web.console.templates={{ prometheus_install_dir + '/prometheus/consoles' }} \
+                                --web.console.libraries={{ prometheus_install_dir + '/prometheus/console_libraries' }}
 
 [Install]
 WantedBy=multi-user.target
