@@ -45,4 +45,4 @@ prometheus_source_dir: /usr/local/src
 prometheus_user_info:
   group: prometheus
   user: prometheus
-prometheus_version: "2.4.3"
+prometheus_version: 2.19.0
