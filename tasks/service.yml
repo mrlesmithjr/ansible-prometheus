@@ -8,3 +8,10 @@
     - restart prometheus
   become: true
   when: ansible_service_mgr == "systemd"
+
+- name: service | Ensuring Prometheus Service Is Started and Enabled
+  service:
+    name: prometheus
+    state: started
+    enabled: true
+  become: true
