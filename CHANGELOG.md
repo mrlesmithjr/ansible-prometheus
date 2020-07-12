@@ -1,3 +1,12 @@
+commit 55b6b97e08865ecf8ba955f1e168e5c997183446
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Sat Jul 11 22:29:19 2020 -0400
+
+    Fixed permissions issue
+    
+    Permissions were being set for mountpoint /opt as prometheus user rather
+    than the directory where Prometheus was being extracted to.
+
 commit 38601911167c7acacc417f33f325cafd4be7db84
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Mon Jun 22 16:40:21 2020 -0400
