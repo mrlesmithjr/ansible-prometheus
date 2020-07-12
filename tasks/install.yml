@@ -9,6 +9,8 @@
   unarchive:
     src: "{{ prometheus_source_dir + '/' + prometheus_download|basename }}"
     dest: "{{ prometheus_install_dir }}"
+    owner: "{{ prometheus_user_info['user'] }}"
+    group: "{{ prometheus_user_info['group'] }}"
     copy: false
   args:
     creates: "{{ prometheus_install_dir + '/prometheus-' + prometheus_version + '.linux-amd64/prometheus' }}"

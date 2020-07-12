@@ -9,14 +9,6 @@
     - restart prometheus
   become: true
 
-- name: config | Setting Folder/File Permissions
-  file:
-    path: "{{ prometheus_install_dir }}"
-    owner: "{{ prometheus_user_info['user'] }}"
-    group: "{{ prometheus_user_info['group'] }}"
-    recurse: true
-  become: true
-
 - name: config | Ensuring {{ prometheus_local_storage }} Exists
   file:
     path: "{{ prometheus_local_storage }}"

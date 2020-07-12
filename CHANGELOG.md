@@ -1,3 +1,18 @@
+commit 38601911167c7acacc417f33f325cafd4be7db84
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Mon Jun 22 16:40:21 2020 -0400
+
+    Added task to ensure service is enabled and started
+    
+    For some reason unknown, this has now become an issue. This should
+    resolve this issue.
+
+commit 114981aa95dddf2e40a96c4f132de511fa2181d9
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Wed Jun 10 11:14:38 2020 -0400
+
+    Updated/Added Python requirements
+
 commit e7ecb18d437c052e794f25bd1f4470711f94ec0a
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Wed Jun 10 11:14:24 2020 -0400
