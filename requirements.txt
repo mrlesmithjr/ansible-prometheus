@@ -18,12 +18,12 @@ click-help-colors==0.8    # via molecule
 click==7.1.2              # via click-completion, click-help-colors, cookiecutter, mkdocs, molecule, nltk, pip-tools, python-gilt
 colorama==0.4.3           # via molecule, python-gilt
 cookiecutter==1.7.2       # via molecule
-cryptography==2.9.2       # via ansible, paramiko
+cryptography==3.2         # via ansible, paramiko
+distro==1.5.0             # via selinux
 docker==4.2.1             # via -r requirements.in
 fasteners==0.15           # via python-gilt
 future==0.18.2            # via lunr
 idna==2.9                 # via requests
-importlib-metadata==1.6.1  # via markdown, pluggy
 jinja2-time==0.2.0        # via cookiecutter
 jinja2==2.11.2            # via ansible, click-completion, cookiecutter, jinja2-time, mkdocs, molecule
 joblib==0.15.1            # via nltk
@@ -50,8 +50,8 @@ python-slugify==4.0.0     # via cookiecutter
 pyyaml==5.3.1             # via ansible, ansible-lint, mkdocs, molecule, python-gilt, yamllint
 regex==2020.6.8           # via nltk
 requests==2.23.0          # via cookiecutter, docker
-ruamel.yaml.clib==0.2.0   # via ruamel.yaml
 ruamel.yaml==0.16.10      # via ansible-lint
+selinux==0.2.1            # via molecule
 sh==1.12.14               # via molecule, python-gilt
 shellingham==1.3.2        # via click-completion
 six==1.15.0               # via ansible-lint, bcrypt, click-completion, cookiecutter, cryptography, docker, fasteners, livereload, lunr, pip-tools, pynacl, python-dateutil, websocket-client
@@ -63,7 +63,6 @@ tree-format==0.1.2        # via molecule
 urllib3==1.25.9           # via requests
 websocket-client==0.57.0  # via docker
 yamllint==1.23.0          # via -r requirements.in, molecule
-zipp==3.1.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
