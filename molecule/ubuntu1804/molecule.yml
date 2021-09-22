@@ -7,10 +7,9 @@ dependency:
 driver:
   name: docker
 lint: |
-  set -e
   yamllint .
   ansible-lint
-  flake8 --exclude=venv
+  flake8
 platforms:
   - name: ubuntu1804
     image: jrei/systemd-ubuntu:18.04
@@ -25,5 +24,6 @@ provisioner:
   name: ansible
   playbooks:
     converge: ../shared/converge.yml
+    prepare: ../shared/prepare.yml
 verifier:
   name: ansible

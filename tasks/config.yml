@@ -1,6 +1,6 @@
 ---
 - name: config | Configuring Prometheus
-  template:
+  ansible.builtin.template:
     src: prometheus.yml.j2
     dest: "{{ prometheus_config_file }}"
     owner: "{{ prometheus_user_info['user'] }}"
@@ -10,7 +10,7 @@
   become: true
 
 - name: config | Ensuring {{ prometheus_local_storage }} Exists
-  file:
+  ansible.builtin.file:
     path: "{{ prometheus_local_storage }}"
     state: directory
     owner: "{{ prometheus_user_info['user'] }}"

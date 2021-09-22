@@ -1,11 +1,11 @@
 ---
 - name: user | Creating Prometheus Group
-  group:
+  ansible.builtin.group:
     name: "{{ prometheus_user_info['group'] }}"
   become: true
 
 - name: user | Creating Prometheus User
-  user:
+  ansible.builtin.user:
     name: "{{ prometheus_user_info['user'] }}"
     groups: "{{ prometheus_user_info['group'] }}"
     state: present
