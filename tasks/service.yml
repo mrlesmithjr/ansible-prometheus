@@ -1,6 +1,6 @@
 ---
 - name: service | Configuring Prometheus Service
-  template:
+  ansible.builtin.template:
     src: etc/systemd/system/prometheus.service.j2
     dest: /etc/systemd/system/prometheus.service
   notify:
@@ -10,7 +10,7 @@
   when: ansible_service_mgr == "systemd"
 
 - name: service | Ensuring Prometheus Service Is Started and Enabled
-  service:
+  ansible.builtin.service:
     name: prometheus
     state: started
     enabled: true
