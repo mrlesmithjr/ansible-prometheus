@@ -3,15 +3,17 @@
   ansible.builtin.get_url:
     url: "{{ prometheus_download }}"
     dest: "{{ prometheus_source_dir + '/' }}"
+    mode: u=rw,g=r,o=r
   become: true
 
 - name: install | Extracting Prometheus From {{ prometheus_source_dir }} To {{ prometheus_install_dir }}
   ansible.builtin.unarchive:
-    src: "{{ prometheus_source_dir + '/' + prometheus_download|basename }}"
+    src: "{{ prometheus_source_dir + '/' + prometheus_download | basename }}"
     dest: "{{ prometheus_install_dir }}"
     owner: "{{ prometheus_user_info['user'] }}"
     group: "{{ prometheus_user_info['group'] }}"
     copy: false
+    mode: u=rw,g=r,o=r
   args:
     creates: "{{ prometheus_install_dir + '/prometheus-' + prometheus_version + '.linux-amd64/prometheus' }}"
   become: true
@@ -21,4 +23,5 @@
     src: "{{ prometheus_install_dir + '/prometheus-' + prometheus_version + '.linux-amd64' }}"
     dest: "{{ prometheus_install_dir + '/prometheus' }}"
     state: link
+    mode: u=rw,g=r,o=r
   become: true

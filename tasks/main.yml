@@ -1,9 +1,13 @@
 ---
 # tasks file for ansible-prometheus
-- include_tasks: user.yml
+- name: Manage Prometheus user(s)
+  ansible.builtin.include_tasks: user.yml
 
-- include_tasks: install.yml
+- name: Install Prometheus
+  ansible.builtin.include_tasks: install.yml
 
-- include_tasks: config.yml
+- name: Configure Prometheus
+  ansible.builtin.include_tasks: config.yml
 
-- include_tasks: service.yml
+- name: Manage Prometheus service
+  ansible.builtin.include_tasks: service.yml

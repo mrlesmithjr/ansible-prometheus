@@ -5,6 +5,7 @@
     dest: "{{ prometheus_config_file }}"
     owner: "{{ prometheus_user_info['user'] }}"
     group: "{{ prometheus_user_info['group'] }}"
+    mode: u=rw,g=r,o=r
   notify:
     - restart prometheus
   become: true
@@ -15,4 +16,5 @@
     state: directory
     owner: "{{ prometheus_user_info['user'] }}"
     group: "{{ prometheus_user_info['group'] }}"
+    mode: u=rw,g=r,o=r
   become: true
