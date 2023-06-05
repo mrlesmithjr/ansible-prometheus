@@ -5,11 +5,12 @@
     dest: "{{ prometheus_config_file }}"
     owner: "{{ prometheus_user_info['user'] }}"
     group: "{{ prometheus_user_info['group'] }}"
+    mode: u=rw,g=r,o=r
   notify:
     - restart prometheus
   become: true
 
-- name: config | Ensuring {{ prometheus_local_storage }} Exists
+- name: config | Ensuring {{ prometheus_local_storage }} Exists # noqa risky-file-permissions
   ansible.builtin.file:
     path: "{{ prometheus_local_storage }}"
     state: directory

@@ -3,6 +3,7 @@
   ansible.builtin.template:
     src: etc/systemd/system/prometheus.service.j2
     dest: /etc/systemd/system/prometheus.service
+    mode: u=rw,g=r,o=r
   notify:
     - reload systemd
     - restart prometheus
