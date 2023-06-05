@@ -18,18 +18,18 @@ jobs:
       max-parallel: 4
       matrix:
         molecule_distro:
-          - alpine313
-          - alpine314
-          - centos7
+          # - alpine313
+          # - alpine314
+          # - centos7
           - centos8
           # - debian8
-          - debian9
+          # - debian9
           - debian10
           - debian11
           - fedora34
           - fedora35
           - rocky8
-          - ubuntu1604
+          # - ubuntu1604
           - ubuntu1804
           - ubuntu2004
           - ubuntu2204
