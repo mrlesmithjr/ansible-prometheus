@@ -38,11 +38,15 @@ prometheus_config:
 
 prometheus_config_file: "{{ prometheus_install_dir + '/prometheus/prometheus.yml' }}"
 prometheus_download_url: https://github.com/prometheus/prometheus/releases/download
-prometheus_download: "{{ prometheus_download_url + '/v' + prometheus_version + '/prometheus-' + prometheus_version + '.linux-amd64.tar.gz' }}"
+
+# Define path to where Prometheus should be installed
 prometheus_install_dir: /opt
+
 prometheus_local_storage: /var/lib/prometheus/data
 prometheus_source_dir: /usr/local/src
 prometheus_user_info:
   group: prometheus
   user: prometheus
+
+# Define Prometheus version to install
 prometheus_version: 2.43.0

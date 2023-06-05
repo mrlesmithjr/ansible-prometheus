@@ -10,11 +10,10 @@
     - restart prometheus
   become: true
 
-- name: config | Ensuring {{ prometheus_local_storage }} Exists
+- name: config | Ensuring {{ prometheus_local_storage }} Exists # noqa risky-file-permissions
   ansible.builtin.file:
     path: "{{ prometheus_local_storage }}"
     state: directory
     owner: "{{ prometheus_user_info['user'] }}"
     group: "{{ prometheus_user_info['group'] }}"
-    mode: u=rw,g=r,o=r
   become: true

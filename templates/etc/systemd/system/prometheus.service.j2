@@ -3,15 +3,19 @@
 Description=Prometheus Server
 Documentation=https://prometheus.io/docs/introduction/overview/
 After=network-online.target
+Requires=local-fs.target
+After=local-fs.target
 
 [Service]
+Type=simple
 User={{ prometheus_user_info['user'] }}
-Restart=on-failure
+Group={{ prometheus_user_info['group'] }}
+Restart=always
 ExecStart={{ prometheus_install_dir }}/prometheus/prometheus \
-                                --config.file={{ prometheus_config_file }} \
-                                --storage.tsdb.path={{ prometheus_local_storage }} \
-                                --web.console.templates={{ prometheus_install_dir + '/prometheus/consoles' }} \
-                                --web.console.libraries={{ prometheus_install_dir + '/prometheus/console_libraries' }}
+    --config.file={{ prometheus_config_file }} \
+    --storage.tsdb.path={{ prometheus_local_storage }} \
+    --web.console.templates={{ prometheus_install_dir + '/prometheus/consoles' }} \
+    --web.console.libraries={{ prometheus_install_dir + '/prometheus/console_libraries' }}
 
 [Install]
 WantedBy=multi-user.target

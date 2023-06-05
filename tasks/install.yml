@@ -1,9 +1,8 @@
 ---
-- name: install | Downloading Prometheus {{ prometheus_version }}
+- name: install | Downloading Prometheus {{ prometheus_version }} # noqa risky-file-permissions
   ansible.builtin.get_url:
     url: "{{ prometheus_download }}"
     dest: "{{ prometheus_source_dir + '/' }}"
-    mode: u=rw,g=r,o=r
   become: true
 
 - name: install | Extracting Prometheus From {{ prometheus_source_dir }} To {{ prometheus_install_dir }}
@@ -13,15 +12,13 @@
     owner: "{{ prometheus_user_info['user'] }}"
     group: "{{ prometheus_user_info['group'] }}"
     copy: false
-    mode: u=rw,g=r,o=r
   args:
-    creates: "{{ prometheus_install_dir + '/prometheus-' + prometheus_version + '.linux-amd64/prometheus' }}"
+    creates: "{{ prometheus_full_dir + '/prometheus' }}"
   become: true
 
 - name: install | Creating Symlink For Prometheus ({{ prometheus_install_dir + '/prometheus' }})
   ansible.builtin.file:
-    src: "{{ prometheus_install_dir + '/prometheus-' + prometheus_version + '.linux-amd64' }}"
+    src: "{{ prometheus_full_dir }}"
     dest: "{{ prometheus_install_dir + '/prometheus' }}"
     state: link
-    mode: u=rw,g=r,o=r
   become: true

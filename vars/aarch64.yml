@@ -1,0 +1,4 @@
+---
+prometheus_file: "{{ 'prometheus-' + prometheus_version + '.linux-arm64.tar.gz' }}"
+prometheus_download: "{{ prometheus_download_url + '/v' + prometheus_version + '/' + prometheus_file }}"
+prometheus_full_dir: "{{ prometheus_install_dir + '/prometheus-' + prometheus_version + '.linux-arm64' }}"
